@@ -21,10 +21,8 @@ createPlot <- function(data) {
 
 createPlot3 <- function(x, y1, y2, y3) {
     plot(x, y1, type="l", col = "black", xlab = "", ylab = "Energy sub metering")
-    par(new = TRUE)
-    plot(x, y2, type="l", col = "red", ylim=c(0, 30), axes = FALSE, xlab = "", ylab = "")
-    par(new = TRUE)
-    plot(x, y3, type="l", col = "blue", ylim=c(0, 30), axes = FALSE, xlab = "", ylab = "")
+    lines(x, y2, type = "l", col = "red")    
+    lines(x, y3, type = "l", col = "blue")
     
     legend("topright", lty = 1, box.lty = 0, col = c("black", "red", "blue"),
            legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
